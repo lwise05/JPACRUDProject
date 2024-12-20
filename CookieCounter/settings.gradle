@@ -1,0 +1,3 @@
+rootProject.name = 'CookieCounter'
+
+includeFlat 'JPACookie'
