@@ -45,7 +45,8 @@ class CookieTest {
 	@Test
 	void test_Cookie_entity_mapping() {
 		assertNotNull(cookie);
-		assertEquals("milk chocolate chip", cookie.getName());	
+		assertEquals("Milk Chocolate Chip", cookie.getName());
+		assertEquals("Classic chocolate chip cookie with milk chocolate chips.", cookie.getDescription());
 	}
 
 }

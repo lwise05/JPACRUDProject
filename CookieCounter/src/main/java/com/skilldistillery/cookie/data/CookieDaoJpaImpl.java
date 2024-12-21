@@ -1,0 +1,54 @@
+package com.skilldistillery.cookie.data;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.skilldistillery.cookie.entities.Cookie;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class CookieDaoJpaImpl implements CookieDAO {
+
+	@PersistenceContext
+	private EntityManager em;
+	
+	@Override
+	public List<Cookie> findAll() {
+		String jpql = "SELECT c FROM Cookie c";
+		List<Cookie> cookies = em.createQuery(jpql, Cookie.class).getResultList();
+		return cookies;
+	}
+
+	@Override
+	public Cookie findById(int cookieId) {
+		return em.find(Cookie.class, cookieId);
+	}
+
+	@Override
+	public Cookie create(Cookie newCookie) {
+		em.getTransaction().begin();
+		em.persist(newCookie);
+		em.flush();
+		em.getTransaction().commit();
+
+		return newCookie;
+	}
+
+	@Override
+	public Cookie update(int cookieId, Cookie cookieToUpdate) {
+	
+		return null;
+	}
+
+	@Override
+	public boolean deleteById(int cookieId) {
+		
+		return false;
+	}
+
+}
