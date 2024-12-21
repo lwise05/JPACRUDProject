@@ -14,7 +14,7 @@
 
 	<form action="getCookie.do" method="GET">
 		Cookie Id: <input type="text" name="cookieId" /> 
-		<input class= "btn btn-outline-primary" type="submit" value="show cookie"/>
+		<input class= "btn btn-outline-primary" type="submit" value="find cookie"/>
 	</form>
 	<br>
 
@@ -34,7 +34,13 @@
 </c:forEach>
 </tbody>
 </table>
+<a href="addCookie.jsp">
+<button>Add a cookie</button>
+</a>
 
+<!-- <form action="addCookie.do" method="POST">
+	<input type="submit" value="Add a cookie"/>
+</form> -->
 <%-- 	<img alt="" img src="${show.cookieImage}"> --%>
  </body>
 </html>

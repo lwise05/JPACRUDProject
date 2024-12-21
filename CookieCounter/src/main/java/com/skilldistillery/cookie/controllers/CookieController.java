@@ -24,7 +24,6 @@ public class CookieController {
 		model.addAttribute("cookieList", cookieList);
 		return "home";
 	}
-	
 
 	@RequestMapping(path= "getCookie.do", method = RequestMethod.GET)
 	public String showCookie(Model model, @RequestParam("cookieId") int cookieId) {
@@ -33,10 +32,15 @@ public class CookieController {
 		return "show";
 	}
 	
-	@RequestMapping(path="createCookie.do", method = RequestMethod.POST)
-	public String createCookie(Model model, @RequestParam("newCookie")Cookie newCookie) {
+	@RequestMapping(path="addCookie.do", method = RequestMethod.POST)
+	public String createCookie(Model model, Cookie newCookie) {
 		Cookie cookie = cookieDao.create(newCookie);
 		model.addAttribute("newCookie", cookie);
-		return "home";
+		return "redirect:home.do";
 	}
+	
+	
+	
+	
+	
 }

@@ -25,7 +25,7 @@ public class Cookie {
 	private Date lastDateAte;
 	
 	@Column(name="cookie_image_url")
-	private String CookieImage;
+	private String cookieImage;
 	
 	public Cookie() {
 		super();
@@ -38,7 +38,7 @@ public class Cookie {
 		this.description = description;
 		this.rating = rating;
 		this.lastDateAte = lastDateAte;
-		CookieImage = cookieImage;
+		this.cookieImage = cookieImage;
 	}
 
 	public String getRating() {
@@ -62,12 +62,12 @@ public class Cookie {
 
 
 	public String getCookieImage() {
-		return CookieImage;
+		return cookieImage;
 	}
 
 
 	public void setCookieImage(String cookieImage) {
-		CookieImage = cookieImage;
+		cookieImage = cookieImage;
 	}
 
 
@@ -100,7 +100,7 @@ public class Cookie {
 	@Override
 	public String toString() {
 		return "Cookie [id=" + id + ", name=" + name + ", description=" + description + ", rating=" + rating
-				+ ", lastDateAte=" + lastDateAte + ", CookieImage=" + CookieImage + "]";
+				+ ", lastDateAte=" + lastDateAte + ", cookieImage=" + cookieImage + "]";
 	}
 
 

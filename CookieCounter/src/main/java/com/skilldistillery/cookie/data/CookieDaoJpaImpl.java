@@ -31,11 +31,7 @@ public class CookieDaoJpaImpl implements CookieDAO {
 
 	@Override
 	public Cookie create(Cookie newCookie) {
-		em.getTransaction().begin();
 		em.persist(newCookie);
-		em.flush();
-		em.getTransaction().commit();
-
 		return newCookie;
 	}
 
