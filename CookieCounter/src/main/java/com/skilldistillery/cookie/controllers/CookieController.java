@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +42,8 @@ public class CookieController {
 	
 	@RequestMapping(path="updateCookie.do", method = RequestMethod.GET)
 	public String updateCookie(Model model,@RequestParam("cookieId")int cookieId) {
-		model.addAttribute("crumb",cookieDao.findById(cookieId));
+		Cookie cookie = cookieDao.findById(cookieId);
+		model.addAttribute("crumb",cookie);
 		return "updateCookie";
 	}
 //	@RequestMapping(path="updateTheCookie.do", method = RequestMethod.POST)
@@ -51,19 +53,20 @@ public class CookieController {
 //	}
 	
 	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST)
-	public String cookieUpdated(Model model, int cookieId, Cookie updatedCookie) {
-		int updatedCookieId = updatedCookie.getId();
-		Cookie cookie = cookieDao.update(updatedCookieId, updatedCookie);
-		model.addAttribute("cookieToUpdate",cookie);
-		return "redirct:home.do";
+	public String cookieUpdated(@ModelAttribute("crumb")Cookie updatedCookie) {
+//		int updatedCookieId = updatedCookie.getId();
+		Cookie cookie = cookieDao.update(updatedCookie.getId(), updatedCookie);
+//		model.addAttribute("crumb",cookie);
+		return "redirect:home.do";
 	}
 	
 	@RequestMapping(path="deleteCookie.do", method = RequestMethod.POST)
 	public String deleteCookie(Model model, @RequestParam("cookieId") int cookieId) {
-		Cookie cookieToDelete = cookieDao.findById(cookieId);
-		model.addAttribute("crumb", cookieToDelete);
+//		Cookie cookieToDelete = cookieDao.findById(cookieId);
+//		model.addAttribute("crumb", cookieToDelete);
 		boolean deletedCookie = cookieDao.deleteById(cookieId);
-		return "redirect:deletedCookie";
+		
+		return "redirect:home.do";
 	}
 	
 	

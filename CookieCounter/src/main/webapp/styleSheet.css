@@ -1,0 +1,31 @@
+body {
+	background-color:#fbd3f9;
+}
+
+button {
+border-radius: 12px;	
+}
+
+button:hover{
+	background-color:#a4278e;
+	color:white;
+}
+
+table, th, tr, td{
+	border:3px solid black;
+	text-align: center;
+}
+
+
+th{
+	background-color: #fdeafc;
+	font-weight: bold;
+}
+
+#cookieTable tbody tr:nth-child(even){
+	background-color: #fdeafc;
+}
+
+#cookieTable tbody tr:nth-child(odd){
+	background-color: white;
+}
