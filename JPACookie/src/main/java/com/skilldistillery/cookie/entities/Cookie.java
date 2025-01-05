@@ -1,6 +1,7 @@
 package com.skilldistillery.cookie.entities;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +23,7 @@ public class Cookie {
 	private String rating;
 	
 	@Column(name="last_date_ate")
-	private Date lastDateAte;
+	private LocalDate lastDateAte;
 	
 	@Column(name="cookie_image_url")
 	private String cookieImage;
@@ -31,7 +32,7 @@ public class Cookie {
 		super();
 	}
 
-	public Cookie(int id, String name, String description, String rating, Date lastDateAte, String cookieImage) {
+	public Cookie(int id, String name, String description, String rating, LocalDate lastDateAte, String cookieImage) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -51,12 +52,12 @@ public class Cookie {
 	}
 
 
-	public Date getLastDateAte() {
+	public LocalDate getLastDateAte() {
 		return lastDateAte;
 	}
 
 
-	public void setLastDateAte(Date lastDateAte) {
+	public void setLastDateAte(LocalDate lastDateAte) {
 		this.lastDateAte = lastDateAte;
 	}
 

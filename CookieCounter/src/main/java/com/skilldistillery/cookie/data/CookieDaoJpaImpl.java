@@ -37,14 +37,26 @@ public class CookieDaoJpaImpl implements CookieDAO {
 
 	@Override
 	public Cookie update(int cookieId, Cookie cookieToUpdate) {
-	
-		return null;
+		Cookie cookie = em.find(Cookie.class, cookieId);
+		cookie.setName(cookieToUpdate.getName());
+		cookie.setDescription(cookieToUpdate.getDescription());
+		cookie.setRating(cookieToUpdate.getRating());
+		cookie.setLastDateAte(cookieToUpdate.getLastDateAte());
+		cookie.setCookieImage(cookieToUpdate.getCookieImage());
+		em.persist(cookie);
+		return cookie;
 	}
 
 	@Override
 	public boolean deleteById(int cookieId) {
-		
-		return false;
+		Cookie cookie = em.find(Cookie.class, cookieId);
+		try {
+			em.remove(cookie);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 }

@@ -39,7 +39,32 @@ public class CookieController {
 		return "redirect:home.do";
 	}
 	
+	@RequestMapping(path="updateCookie.do", method = RequestMethod.GET)
+	public String updateCookie(Model model,@RequestParam("cookieId")int cookieId) {
+		model.addAttribute("crumb",cookieDao.findById(cookieId));
+		return "updateCookie";
+	}
+//	@RequestMapping(path="updateTheCookie.do", method = RequestMethod.POST)
+//	public String updateCookie(Model model, int cookieId) {
+//		model.addAttribute("cookieCrumb",cookieDao.findById(cookieId));
+//		return "updateCookie";
+//	}
 	
+	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST)
+	public String cookieUpdated(Model model, int cookieId, Cookie updatedCookie) {
+		int updatedCookieId = updatedCookie.getId();
+		Cookie cookie = cookieDao.update(updatedCookieId, updatedCookie);
+		model.addAttribute("cookieToUpdate",cookie);
+		return "redirct:home.do";
+	}
+	
+	@RequestMapping(path="deleteCookie.do", method = RequestMethod.POST)
+	public String deleteCookie(Model model, @RequestParam("cookieId") int cookieId) {
+		Cookie cookieToDelete = cookieDao.findById(cookieId);
+		model.addAttribute("crumb", cookieToDelete);
+		boolean deletedCookie = cookieDao.deleteById(cookieId);
+		return "redirect:deletedCookie";
+	}
 	
 	
 	
