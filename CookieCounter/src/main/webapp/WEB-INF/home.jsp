@@ -31,12 +31,12 @@ Keep track of all your Crumbl cookie experiences
 </div>
 
 <br>
-<table id="cookieTable">
+<table id="cookieTable" style="width:100%">
 <thead>
 	<tr>
-		<th>Name</th>
+		<th>Cookie</th>
 		<th>Description</th>
-		<th>Rating</th>
+		<th>Your Rating</th>
 		<th>Your Last Bite</th>
 		<th>Image</th>
 		<th></th>
@@ -45,11 +45,12 @@ Keep track of all your Crumbl cookie experiences
 <tbody>
 <c:forEach var="crumb" items="${cookieList}">
 	<tr>
-		<td>${crumb.name} (id: ${crumb.id}) </td>
+		<td>${crumb.name} (id: ${crumb.id})</td>
 		<td>${crumb.description}</td>
 		<td>${crumb.rating}</td>
 		<td>${crumb.lastDateAte}</td>
-		<td><img alt="${crumb.name} image" src="${pageContext.request.contextPath}${crumb.cookieImage}"/></td>
+		<td><img alt="${crumb.name} image" src="${crumb.cookieImage}"/></td>
+		<%-- <td><img alt="${crumb.name} image" src="${pageContext.request.contextPath}${crumb.cookieImage}"/></td> --%>
 		<td>
 		<!--   <a href="updateCookie.jsp?cookieId=${crumb.id}"><button type="button" class= "btn btn-outline-primary">Update Cookie</button>-->
 		<form action="updateCookie.jsp" method="POST">

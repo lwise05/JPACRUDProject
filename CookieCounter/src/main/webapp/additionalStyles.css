@@ -43,6 +43,7 @@ h1 {
 button {
 	border-radius: 12px;
 	background-color: white;
+	font-size:15px;
 }
 
 button:hover {
@@ -50,6 +51,13 @@ button:hover {
 	color: white;
 }
 
+#deleteCookie:hover{
+	background-color:#e51f1f;
+	color:white;
+}
+/* #updateCookie, deleteCookie{
+	font-size:15px;
+} */
 .btn {
 	float: left;
 	padding: 20px 16px;
@@ -63,8 +71,8 @@ li{
 }
 
 img{
-	 display: block;
+display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 20%;
 }

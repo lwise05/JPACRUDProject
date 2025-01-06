@@ -30,6 +30,16 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
   <li>Description: ${cookieCrumb.description}</li>
   <li>Rating: ${cookieCrumb.rating}</li>
   <li>Date you tried it last: ${cookieCrumb.lastDateAte}</li>
+  
+  <form action="updateCookie.jsp" method="POST">
+		<input type="hidden" name="cookieId" value="${cookieCrumb.id}">
+		<button type="submit" name="updateCookie" value="Update Cookie">Update Cookie</button></a>
+  </form>	  
+			
+  <form action="deleteCookie.do" method="POST">
+		<input type="hidden" name="cookieId" value="${cookieCrumb.id}">
+		<button type="submit" id="deleteCookie" name="deleteCookie" value="Delete Cookie">Delete Cookie</button>
+  </form>
   </c:when>
   
   <c:otherwise>Cookie not found with that Id</c:otherwise>

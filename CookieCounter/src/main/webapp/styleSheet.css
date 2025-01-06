@@ -35,6 +35,7 @@ h1{
 button {
 border-radius: 12px;
 background-color:white;
+  margin: 3px;
 }
 
 #deleteCookie:hover{
@@ -51,12 +52,24 @@ table, th, tr, td{
 	top: 20%;
 	border:3px solid black;
 	text-align: center;
+	padding-top: 20px;
+   padding-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
 }
-
+.cookieName{
+	font-weight: bold;
+	 font-size: 20px;
+}
 
 th{
 	background-color: #fdeafc;
 	font-weight: bold;
+	 font-size: 25px;
+}
+
+td{
+	 font-size: 20px;
 }
 
 #cookieTable tbody tr:nth-child(even){

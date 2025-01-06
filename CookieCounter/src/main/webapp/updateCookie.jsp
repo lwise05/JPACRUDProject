@@ -18,7 +18,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 	</div>
 <div class="backgroundImage"></div>
 
-	<form action="updateCookieInDB.do" method="POST">
+	<form action="updateCookieInDB.do" class="form" method="POST">
 	<input type="hidden" name="id" value="${crumb.id}">
 	Cookie name: <input type="text" value="${crumb.name}" name="name"/><br> 
 	Description: <input type="text" value="${crumb.description}" name="description"><br>
@@ -29,7 +29,8 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 			</select><br>
 	Date you last tried it: <input type="text" value="${crumb.lastDateAte}" name="lastDateAte"><br>
 	Upload cookie image:<input type="text" value="${crumb.cookieImage}" name="cookieImage"><br>
-	<input type="submit" class="submit-button" value="Update Cookie"/>
+<!-- 	<input type="submit" class="submit-button" value="Update Cookie"/> -->
+	<button type="submit" value="update cookie">Update Cookie</button>
 	</form>
 
 
