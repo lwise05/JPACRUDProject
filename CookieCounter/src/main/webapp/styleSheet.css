@@ -1,17 +1,62 @@
 body {
 	background-color:#fbd3f9;
 }
+#leftCookie{
+	 margin-left: 16px;
+} 
 
-button {
-border-radius: 12px;	
+.welcomeHeader{
+	text-align:center;
+	font-family:monospace;
 }
 
+#rightCookie{
+	 margin-right: 16px;
+} 
+
+
+.topnav{
+	overflow: hidden;
+	background-color:#f084e2;
+}
+
+.topnav input[type=submit]{
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #f8fdfe;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  	
+}
+
+.topnav input[type=text]{
+ padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+
+button {
+border-radius: 12px;
+background-color:white;
+}
+
+#deleteCookie:hover{
+	background-color:#e51f1f;
+	color:white;
+}
 button:hover{
-	background-color:#a4278e;
+	background-color:#a4278e; /* pink/purple */
 	color:white;
 }
 
+
 table, th, tr, td{
+	top: 20%;
 	border:3px solid black;
 	text-align: center;
 }
@@ -29,3 +74,10 @@ th{
 #cookieTable tbody tr:nth-child(odd){
 	background-color: white;
 }
+.addCookie{
+	float:right;
+	padding: 20px 16px;
+
+}
+
+

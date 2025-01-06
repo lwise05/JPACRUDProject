@@ -43,8 +43,8 @@ public class CookieDaoJpaImpl implements CookieDAO {
 		cookie.setRating(cookieToUpdate.getRating());
 		cookie.setLastDateAte(cookieToUpdate.getLastDateAte());
 		cookie.setCookieImage(cookieToUpdate.getCookieImage());
-		em.persist(cookie);
-		return cookie;
+//		em.persist(cookie);
+		return cookieToUpdate;
 	}
 
 	@Override

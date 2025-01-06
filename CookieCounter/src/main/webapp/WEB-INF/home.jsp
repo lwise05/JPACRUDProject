@@ -12,15 +12,22 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 </head>
 <body>
 <div class="container">
-<h1>Welcome To The Cookie Counter!</h1>
 
-
-
+<div class="topnav"> 
 	<form action="getCookie.do" method="GET">
-		Cookie Id: <input type="text" name="cookieId" /> 
+		<input type="text" placeholder="Enter Cookie Id" name="cookieId" /> 
 		<button type="submit" value="find cookie">Find Cookie</button>
 	</form>
-	<br>
+</div><br>
+
+<div id="header">
+<h1 class="welcomeHeader">Welcome To The Cookie Counter!</h1>
+<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="rightCookie" class="giphyCookie"></iframe>
+<p><a href="https://giphy.com/stickers/plsthnks-cookie-chocolatechipcookie-ptycookie-7LjmRWK2YHufpBNp7c"></a></p>
+<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="leftCookie" class="giphyCookie"></iframe>
+<p><a href="https://giphy.com/stickers/plsthnks-cookie-chocolatechipcookie-ptycookie-7LjmRWK2YHufpBNp7c"></a></p>
+</div>
+
 
 <table id="cookieTable">
 <thead>
@@ -43,23 +50,24 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 		<td></td>
 		<td>
 		<!--   <a href="updateCookie.jsp?cookieId=${crumb.id}"><button type="button" class= "btn btn-outline-primary">Update Cookie</button>-->
-		 <form action="updateCookie.jsp?cookieId=${crumb.id}" method="POST">
-			<input type="hidden" name="cookieId" value="${crumb.id}"/>
-			<button type="submit" name="updateCookie" value="Update Cookie">Update Cookie</button>
-			</form>  
-		</td>
-	<!-- 	<a href="updateCookie.jsp"><button>Edit entry</button></td> -->
-		<td>
-		<form action="deleteCookie.do" method="POST">
+		<form action="updateCookie.jsp" method="POST">
+		<input type="hidden" name="cookieId" value="${crumb.id}">
+		<%-- 	<input type="hidden" value="${crumb.id}"/> --%>
+			<button type="submit" name="updateCookie" value="Update Cookie">Update Cookie</button></a>
+		</form>	  
+			
+			<form action="deleteCookie.do" method="POST">
 			<input type="hidden" name="cookieId" value="${crumb.id}">
-			<button type="submit" name="deleteCookie" value="Delete Cookie">Delete Cookie</button>
+			<button type="submit" id="deleteCookie" name="deleteCookie" value="Delete Cookie">Delete Cookie</button>
 			</form>
 		</td>
+	<!-- 	<a href="updateCookie.jsp"><button>Edit entry</button></td> -->
+		
 	</tr>
 </c:forEach>
 </tbody>
 </table>
-<a href="addCookie.jsp"><button>Add a cookie</button></a>
+<a href="addCookie.jsp"><button class="addCookie">Add a cookie</button></a>
 
 
 <!-- <form action="addCookie.do" method="POST">

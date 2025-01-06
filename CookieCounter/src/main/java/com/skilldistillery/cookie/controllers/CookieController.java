@@ -40,7 +40,7 @@ public class CookieController {
 		return "redirect:home.do";
 	}
 	
-	@RequestMapping(path="updateCookie.do", method = RequestMethod.GET)
+	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST)
 	public String updateCookie(Model model,@RequestParam("cookieId")int cookieId) {
 		Cookie cookie = cookieDao.findById(cookieId);
 		model.addAttribute("crumb",cookie);
@@ -52,11 +52,11 @@ public class CookieController {
 //		return "updateCookie";
 //	}
 	
-	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST)
-	public String cookieUpdated(@ModelAttribute("crumb")Cookie updatedCookie) {
+	@RequestMapping(path="updateCookieInDB.do", method = RequestMethod.POST) 
+	public String cookieUpdated(Model model, Cookie updatedCookie) {
 //		int updatedCookieId = updatedCookie.getId();
 		Cookie cookie = cookieDao.update(updatedCookie.getId(), updatedCookie);
-//		model.addAttribute("crumb",cookie);
+		model.addAttribute("crumb",cookie);
 		return "redirect:home.do";
 	}
 	
