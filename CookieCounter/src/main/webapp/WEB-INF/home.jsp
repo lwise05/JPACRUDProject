@@ -15,7 +15,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 
 <div class="topnav"> 
 	<form action="getCookie.do" method="GET">
-		<input type="text" placeholder="Enter Cookie Id" name="cookieId" /> 
+		<input type="text" placeholder="Enter Cookie Id" required name="cookieId" /> 
 		<button type="submit" value="find cookie">Find Cookie</button>
 	</form>
 </div><br>
@@ -49,7 +49,7 @@ Keep track of all your Crumbl cookie experiences.
 		<td>${crumb.description}</td>
 		<td>${crumb.rating}</td>
 		<td>${crumb.lastDateAte}</td>
-		<td><img alt="${crumb.name} image" src="${crumb.cookieImage}"/></td>
+		<td><img alt="${crumb.name} image" src="${pageContext.request.contextPath}${crumb.cookieImage}"/></td>
 		<td>
 		<!--   <a href="updateCookie.jsp?cookieId=${crumb.id}"><button type="button" class= "btn btn-outline-primary">Update Cookie</button>-->
 		<form action="updateCookie.jsp" method="POST">
