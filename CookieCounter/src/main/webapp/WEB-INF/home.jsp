@@ -25,7 +25,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 
 <h3>
 <iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="rightCookie" style="float:left" class="giphyCookie"></iframe>
-Keep track of all your Crumbl cookie experiences.
+Keep track of all your Crumbl cookie experiences
 <iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="leftCookie" style="float:right" class="giphyCookie"></iframe>
 </h3>
 </div>
