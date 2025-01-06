@@ -29,7 +29,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
   <h1>${cookieCrumb.name} (Id: ${cookieCrumb.id})</h1>
   <li>Description: ${cookieCrumb.description}</li>
   <li>Rating: ${cookieCrumb.rating}</li>
-  <li>Date you tried it last: ${cookieCrumb.lastDateAte}</li>
+  <li>Calories: ${cookieCrumb.calories}</li>
   
   <form action="updateCookie.jsp" method="POST">
 		<input type="hidden" name="cookieId" value="${cookieCrumb.id}">

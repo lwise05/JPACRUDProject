@@ -35,10 +35,10 @@ Keep track of all your Crumbl cookie experiences
 <thead>
 	<tr>
 		<th>Cookie</th>
-		<th>Description</th>
-		<th>Your Rating</th>
-		<th>Your Last Bite</th>
 		<th>Image</th>
+		<th>Description</th>
+		<th>Rating</th>
+		<th>Calories</th>
 		<th></th>
 	</tr>
 </thead>
@@ -46,18 +46,20 @@ Keep track of all your Crumbl cookie experiences
 <c:forEach var="crumb" items="${cookieList}">
 	<tr>
 		<td>${crumb.name} (id: ${crumb.id})</td>
+		<td><img alt="${crumb.name} image" src="${crumb.cookieImage}"/></td>
 		<td>${crumb.description}</td>
 		<td>${crumb.rating}</td>
-		<td>${crumb.lastDateAte}</td>
-		<td><img alt="${crumb.name} image" src="${crumb.cookieImage}"/></td>
+		<td>${crumb.calories}</td>
 		<%-- <td><img alt="${crumb.name} image" src="${pageContext.request.contextPath}${crumb.cookieImage}"/></td> --%>
 		<td>
-		<!--   <a href="updateCookie.jsp?cookieId=${crumb.id}"><button type="button" class= "btn btn-outline-primary">Update Cookie</button>-->
-		<form action="updateCookie.jsp" method="POST">
+		
+		 <form action="updateCookie.jsp" method="GET">
 		<input type="hidden" name="cookieId" value="${crumb.id}">
-		<%-- 	<input type="hidden" value="${crumb.id}"/> --%>
-			<button type="submit" name="updateCookie" value="Update Cookie">Update Cookie</button></a>
-		</form>	  
+			<button type="submit" value="Update Cookie">Update Cookie</button></a>
+		</form> 	 
+		
+	<%-- 	<a href="updateCookie.do?cookieId=${crumb.id}"
+			<button type="submit" name="updateCookie" value="Update Cookie">Update Cookie</button>></a>  --%>
 			
 			<form action="deleteCookie.do" method="POST">
 			<input type="hidden" name="cookieId" value="${crumb.id}">

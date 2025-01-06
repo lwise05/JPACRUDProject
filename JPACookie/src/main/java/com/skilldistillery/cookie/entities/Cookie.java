@@ -1,7 +1,6 @@
 package com.skilldistillery.cookie.entities;
 
-import java.sql.Date;
-import java.time.LocalDate;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,8 +21,7 @@ public class Cookie {
 	
 	private String rating;
 	
-	@Column(name="last_date_ate")
-	private LocalDate lastDateAte;
+	private int calories;
 	
 	@Column(name="cookie_image_url")
 	private String cookieImage;
@@ -32,13 +30,14 @@ public class Cookie {
 		super();
 	}
 
-	public Cookie(int id, String name, String description, String rating, LocalDate lastDateAte, String cookieImage) {
+
+	public Cookie(int id, String name, String description, String rating, int calories, String cookieImage) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.rating = rating;
-		this.lastDateAte = lastDateAte;
+		this.calories = calories;
 		this.cookieImage = cookieImage;
 	}
 
@@ -52,13 +51,13 @@ public class Cookie {
 	}
 
 
-	public LocalDate getLastDateAte() {
-		return lastDateAte;
+	public int getCalories() {
+		return calories;
 	}
 
 
-	public void setLastDateAte(LocalDate lastDateAte) {
-		this.lastDateAte = lastDateAte;
+	public void setCalories(int calories) {
+		this.calories = calories;
 	}
 
 
@@ -68,7 +67,7 @@ public class Cookie {
 
 
 	public void setCookieImage(String cookieImage) {
-		cookieImage = cookieImage;
+		this.cookieImage = cookieImage;
 	}
 
 
@@ -98,11 +97,14 @@ public class Cookie {
 		this.description = description;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Cookie [id=" + id + ", name=" + name + ", description=" + description + ", rating=" + rating
-				+ ", lastDateAte=" + lastDateAte + ", cookieImage=" + cookieImage + "]";
+				+ ", calories=" + calories + ", cookieImage=" + cookieImage + "]";
 	}
+
+	
 
 
 

@@ -18,18 +18,19 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 	</div>
 <div class="backgroundImage"></div>
 
-	<form action="updateCookieInDB.do" class="form" method="POST">
-	<input type="hidden" name="id" value="${crumb.id}">
-	Cookie name: <input type="text" value="${crumb.name}" name="name"/><br> 
-	Description: <input type="text" value="${crumb.description}" name="description"><br>
+	<form action="updateCookie.do" class="form" method="POST">
+	<h1>Update a cookie!</h1>
+	<input type="hidden" name="id" value="${updateCookie.id}">
+	Cookie name: <input type="text" value="${updateCookie.name}" name="name"/><br> 
+	Description: <input type="text" value="${updateCookie.description}" name="description"><br>
 	Rating: <select name="rating">
 				<option value="Bad">Bad</option>
 				<option value="Good">Good</option>
 				<option value="Great">Great</option>
 			</select><br>
-	Date you last tried it: <input type="text" value="${crumb.lastDateAte}" name="lastDateAte"><br>
-	Upload cookie image:<input type="text" value="${crumb.cookieImage}" name="cookieImage"><br>
-<!-- 	<input type="submit" class="submit-button" value="Update Cookie"/> -->
+	Calories: <input type="text" value="${updateCookie.calories}" name="calories"><br>
+	Upload cookie image:<input type="text" value="${updateCookie.cookieImage}" name="cookieImage"><br>
+	<p>*look for image on Crumbl website</p>
 	<button type="submit" value="update cookie">Update Cookie</button>
 	</form>
 

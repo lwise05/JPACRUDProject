@@ -41,10 +41,10 @@ public class CookieDaoJpaImpl implements CookieDAO {
 		cookie.setName(cookieToUpdate.getName());
 		cookie.setDescription(cookieToUpdate.getDescription());
 		cookie.setRating(cookieToUpdate.getRating());
-		cookie.setLastDateAte(cookieToUpdate.getLastDateAte());
+		cookie.setCalories(cookieToUpdate.getCalories());
 		cookie.setCookieImage(cookieToUpdate.getCookieImage());
 //		em.persist(cookie);
-		return cookieToUpdate;
+		return cookie;
 	}
 
 	@Override

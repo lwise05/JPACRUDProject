@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.cookie.data.CookieDAO;
 import com.skilldistillery.cookie.entities.Cookie;
@@ -40,10 +41,10 @@ public class CookieController {
 		return "redirect:home.do";
 	}
 	
-	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST)
+	@RequestMapping(path="updateCookie.do", method = RequestMethod.GET)
 	public String updateCookie(Model model,@RequestParam("cookieId")int cookieId) {
 		Cookie cookie = cookieDao.findById(cookieId);
-		model.addAttribute("crumb",cookie);
+		model.addAttribute("cookie",cookie);
 		return "updateCookie";
 	}
 //	@RequestMapping(path="updateTheCookie.do", method = RequestMethod.POST)
@@ -52,11 +53,11 @@ public class CookieController {
 //		return "updateCookie";
 //	}
 	
-	@RequestMapping(path="updateCookieInDB.do", method = RequestMethod.POST) 
-	public String cookieUpdated(Model model, Cookie updatedCookie) {
+	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST) 
+	public String cookieUpdated(RedirectAttributes redir,@ModelAttribute("cookie") Cookie updatedCookie) {
 //		int updatedCookieId = updatedCookie.getId();
 		Cookie cookie = cookieDao.update(updatedCookie.getId(), updatedCookie);
-		model.addAttribute("crumb",cookie);
+		redir.addFlashAttribute("updateCookie",cookie);
 		return "redirect:home.do";
 	}
 	

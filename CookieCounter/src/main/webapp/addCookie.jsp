@@ -14,62 +14,6 @@
 	
 <link rel="stylesheet" href="additionalStyles.css">
 
-<!-- <style>
-body, html {
-	font-family: monospace;
-	height: 100%;
-	background-color:fdeafc;
-}
-
-h1 {
-	text-align: center;
-}
-
-.topnav {
-	overflow: hidden;
-	background-color: #f084e2;
-}
-* {
-  box-sizing: border-box;
-}
-
-.backgroundImage {
-	background-image:
-		url("https://s.hdnux.com/photos/01/25/37/56/22412210/7/1920x0.jpg");
-		/* url("https://www.mashed.com/img/gallery/instagram-is-pumped-for-crumbl-cookies-new-milk-inspired-flavor/intro-1663634033.jpg"); */
-	height: 25%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
-.form {
-	position: absolute;
-	
-	margin: 20px;
-	max-width: 300px;
-	padding: 16px;
-	background-color: #fbd3f9;
-}
-
-button {
-	border-radius: 12px;
-	background-color: white;
-}
-
-button:hover {
-	background-color: #a4278e; /* pink/purple */
-	color: white;
-}
-
-.btn {
-	float: left;
-	padding: 20px 16px;
-}
-</style>
- -->
-
 </head>
 <body>
 	<div class="topnav">
@@ -90,9 +34,11 @@ button:hover {
 				<option value="Bad">Bad</option>
 				<option value="Good">Good</option>
 				<option value="Great">Great</option>
-			</select><br> <input type="text" placeholder="When did you try it?"
-				name="lastDateAte"><br> <input type="text"
+			</select><br> 
+			<input type="text" placeholder="How many calories?"
+				name="calories"><br> <input type="text"
 				placeholder="Add cookie image" name="cookieImage"><br>
+				<p>*look for image on Crumbl website</p>
 			<!-- <input type="submit" value="add cookie" /> -->
 			<button type="submit" value="add cookie">Add Cookie</button>
 		</form>
