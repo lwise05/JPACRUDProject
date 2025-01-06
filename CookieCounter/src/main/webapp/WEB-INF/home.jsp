@@ -53,7 +53,7 @@ Keep track of all your Crumbl cookie experiences
 		<%-- <td><img alt="${crumb.name} image" src="${pageContext.request.contextPath}${crumb.cookieImage}"/></td> --%>
 		<td>
 		
-		 <form action="updateCookie.jsp" method="GET">
+		 <form action="updateCookie.do" method="GET">
 		<input type="hidden" name="cookieId" value="${crumb.id}">
 			<button type="submit" value="Update Cookie">Update Cookie</button></a>
 		</form> 	 

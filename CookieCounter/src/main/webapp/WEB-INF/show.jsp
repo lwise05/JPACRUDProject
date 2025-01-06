@@ -25,7 +25,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 <c:choose>
 <%--<c:when test="${film.id <= 1000}">--%>
 <c:when test="${! empty cookieCrumb}">
- <img alt="${cookieCrumb.name} image" src="${pageContext.request.contextPath}${cookieCrumb.cookieImage}"/>
+ <img alt="${cookieCrumb.name} image" src="${cookieCrumb.cookieImage}"/>
   <h1>${cookieCrumb.name} (Id: ${cookieCrumb.id})</h1>
   <li>Description: ${cookieCrumb.description}</li>
   <li>Rating: ${cookieCrumb.rating}</li>

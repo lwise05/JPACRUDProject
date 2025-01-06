@@ -44,7 +44,7 @@ public class CookieController {
 	@RequestMapping(path="updateCookie.do", method = RequestMethod.GET)
 	public String updateCookie(Model model,@RequestParam("cookieId")int cookieId) {
 		Cookie cookie = cookieDao.findById(cookieId);
-		model.addAttribute("cookie",cookie);
+		model.addAttribute("updateCookie",cookie);
 		return "updateCookie";
 	}
 //	@RequestMapping(path="updateTheCookie.do", method = RequestMethod.POST)
@@ -54,10 +54,12 @@ public class CookieController {
 //	}
 	
 	@RequestMapping(path="updateCookie.do", method = RequestMethod.POST) 
-	public String cookieUpdated(RedirectAttributes redir,@ModelAttribute("cookie") Cookie updatedCookie) {
+	public String cookieUpdated(Model model, Cookie updatedCookie) {
+//	public String cookieUpdated(RedirectAttributes redir,@ModelAttribute("cookie") Cookie updatedCookie) {
 //		int updatedCookieId = updatedCookie.getId();
 		Cookie cookie = cookieDao.update(updatedCookie.getId(), updatedCookie);
-		redir.addFlashAttribute("updateCookie",cookie);
+		model.addAttribute("updateCookie", cookie);
+//		redir.addFlashAttribute("updateCookie",cookie);
 		return "redirect:home.do";
 	}
 	
