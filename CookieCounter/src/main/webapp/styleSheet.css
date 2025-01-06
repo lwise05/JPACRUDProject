@@ -1,22 +1,14 @@
 body {
 	background-color:#fbd3f9;
-}
-#leftCookie{
-	 margin-left: 16px;
-} 
-
-.welcomeHeader{
-	text-align:center;
 	font-family:monospace;
 }
 
-#rightCookie{
-	 margin-right: 16px;
-} 
-
+h1{
+	text-align:center;
+}
 
 .topnav{
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color:#f084e2;
 }
 
@@ -24,7 +16,7 @@ body {
   float: right;
   padding: 6px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 3px;
   background: #f8fdfe;
   font-size: 17px;
   border: none;

@@ -21,14 +21,16 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 </div><br>
 
 <div id="header">
-<h1 class="welcomeHeader">Welcome To The Cookie Counter!</h1>
-<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="rightCookie" class="giphyCookie"></iframe>
-<p><a href="https://giphy.com/stickers/plsthnks-cookie-chocolatechipcookie-ptycookie-7LjmRWK2YHufpBNp7c"></a></p>
-<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="leftCookie" class="giphyCookie"></iframe>
-<p><a href="https://giphy.com/stickers/plsthnks-cookie-chocolatechipcookie-ptycookie-7LjmRWK2YHufpBNp7c"></a></p>
+<h1 class="welcomeHeader">Welcome To The Cookie Counter!</h1><br>
+
+<h3>
+<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="rightCookie" style="float:left" class="giphyCookie"></iframe>
+Keep track of all your Crumbl cookie experiences.
+<iframe src="https://giphy.com/embed/7LjmRWK2YHufpBNp7c" id="leftCookie" style="float:right" class="giphyCookie"></iframe>
+</h3>
 </div>
 
-
+<br>
 <table id="cookieTable">
 <thead>
 	<tr>
@@ -47,7 +49,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 		<td>${crumb.description}</td>
 		<td>${crumb.rating}</td>
 		<td>${crumb.lastDateAte}</td>
-		<td></td>
+		<td><img alt="${crumb.name} image" src="${crumb.cookieImage}"/></td>
 		<td>
 		<!--   <a href="updateCookie.jsp?cookieId=${crumb.id}"><button type="button" class= "btn btn-outline-primary">Update Cookie</button>-->
 		<form action="updateCookie.jsp" method="POST">
@@ -61,7 +63,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 			<button type="submit" id="deleteCookie" name="deleteCookie" value="Delete Cookie">Delete Cookie</button>
 			</form>
 		</td>
-	<!-- 	<a href="updateCookie.jsp"><button>Edit entry</button></td> -->
+
 		
 	</tr>
 </c:forEach>

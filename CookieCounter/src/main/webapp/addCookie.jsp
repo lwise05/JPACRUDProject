@@ -24,7 +24,7 @@ h1 {
 }
 
 .topnav {
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color: #f084e2;
 }
 * {
